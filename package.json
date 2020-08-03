@@ -1,0 +1,34 @@
+{
+  "name": "blob-web-worker",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.html",
+  "scripts": {
+    "start": "concurrently \"parcel index.html --open\" \"parcel watch src/worker.js\"",
+    "build": "parcel build src/index.js && parcel build src/worker.js"
+  },
+  "app": "src/index.js",
+  "worker": "src/worker.js",
+  "targets": {
+    "app": {
+      "context": "browser",
+      "includeNodeModules": true,
+      "outputFormat": "global",
+      "isLibrary": false
+    },
+    "worker": {
+      "context": "worker",
+      "includeNodeModules": false,
+      "outputFormat": "global",
+      "isLibrary": false
+    }
+  },
+  "dependencies": {
+    "concurrently": "^5.2.0"
+  },
+  "devDependencies": {
+    "@babel/core": "7.2.0",
+    "parcel-bundler": "^1.6.1"
+  },
+  "keywords": []
+}

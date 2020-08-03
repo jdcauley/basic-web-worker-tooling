@@ -1,0 +1,10 @@
+.DS_*
+*.log
+logs
+**/*.backup.*
+**/*.back.*
+
+.cache
+node_modules
+yarn.lock
+dist
